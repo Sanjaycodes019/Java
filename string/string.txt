@@ -1,0 +1,35 @@
+- Strings are instances of the string class, never primitive
+- Strings are immutable, any changes create new object
+
+- String literals: stored in string pool for reuse
+  String str = "hello";
+- Using new keyword: Creates a new object in heap memory
+  String str2 = new String("HELLO");
+- Interning: You can add a string to the pool with str.intern().
+
+Immutability
+String a = "hello";
+a.concat(" world"); // 'a' still "hello"
+a = a.concat(" world"); // 'a' now "hello world"
+// Thread saftey, string pooling, and reliable hashing
+
+Interfaces and related classes
+-> CharSequences: interface implemented by string, stringbuilder, and stringbuffer
+-> StringBuilder/StringBuffer: Mutable classes for effiecient concatenation. 
+   StringBuffer is thread-safe, string builder is not
+
+Key Methods:
+-> length(), charAt(int), substring(start,end), indexOf(str),
+   equals(), compareTo(), split(regex), trim(), replace(old,new),
+   toUpperCase(), toLowerCase()
+-> Use equals() for value comparison, not == (which checks reference).
+   For formatting, use String.format().
+
+Formatting
+String info = String.format("Name: %s, Age: %d", n, a);
+
+Conversion, array and Strings with constructors
+char[] chars = {'h', 'e', 'l', 'l', 'o'};
+String s = new String(chars); // "hello"
+
+
